@@ -2,9 +2,9 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.13
 
 Item {
-    property string _sCardGround: "file:content/images/card/ground.jpg"
-    property string _sCardEmpty: "file:content/images/card/empty.png"
-    property string _sCardFrame: "file:content/images/card/frame.png"
+    property string _sCardGround: "qrc:/content/images/card/ground.jpg"
+    property string _sCardEmpty: "qrc:/content/images/card/empty.png"
+    property string _sCardFrame: "qrc:/content/images/card/frame.png"
 
     Connections {
         target: _cQmlAdapter
@@ -79,7 +79,7 @@ Item {
             console.log("onQmlAdapterHandlingSetPlayerCard2Ground: " + iPlayer + ", " + iCard + ", " + iX + ", " + iY + ", " + iIndex);
 
             item._iPlayer = iPlayer
-            item._source = "file:content/images/card/empty.png"
+            item._source = "qrc:/content/images/card/empty.png"
 
             if (iPlayer === 1)
             {

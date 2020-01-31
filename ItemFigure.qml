@@ -15,6 +15,8 @@ Item {
     property int _iValue1
     property int _iValue2
     property int _iValue3
+    property real _fFactorImage: 2.5
+    property real _fFactorFont: 5
 
     property color colorNoPlayer: "#77111111"
     property color colorPlayer1: "#44ff0000"
@@ -117,121 +119,162 @@ Item {
             color: "#77111111"
         }
 
-        Image {
-            id: image0
-            width: image.width/3; height: image.height/3
-            anchors.left: image.left
-            anchors.top: image.top
-            anchors.leftMargin: image.width/2 - width/2
-            anchors.topMargin: image.height/15
-            source: _sourceFrame
-            fillMode: Image.PreserveAspectFit
-            cache: false
+        Rectangle {
+            id: rect0
+            color: "transparent"
+            width: parent.width/_fFactorImage
+            height: parent.height/_fFactorImage
+            anchors.left: parent.horizontalCenter
+            anchors.leftMargin: -width/2
+            anchors.top: parent.verticalCenter
+            anchors.topMargin: -height
 
-            ColorOverlay {
-                id: colorOverlayImage0
+            Image {
+                id: image0
                 anchors.fill: parent
-                source: image0
-                color: "#77111111"
+                source: _sourceFrame
+                fillMode: Image.PreserveAspectFit
+                cache: false
+
+                ColorOverlay {
+                    id: colorOverlayImage0
+                    anchors.fill: parent
+                    source: image0
+                    color: "#77111111"
+                }
+
+                Text {
+                    anchors.centerIn: parent
+                    font {
+                        pointSize: image0.width/_fFactorFont
+                        bold: true
+                    }
+                    text: {
+                        ""
+                        qsTr(Number(_iValue0).toLocaleString(Qt.locale("de_DE"), 'f', 0))
+                    }
+                }
             }
 
-            Text {
-                anchors.centerIn: parent
-                font {
-                    pointSize: image0.width/4
-                    bold: true
+        }
+
+        Rectangle {
+            id: rect1
+            color: "transparent"
+            width: parent.width/_fFactorImage
+            height: parent.height/_fFactorImage
+            anchors.left: parent.horizontalCenter
+            anchors.leftMargin: 0
+            anchors.top: parent.verticalCenter
+            anchors.topMargin: -height/2
+
+            Image {
+                id: image1
+                anchors.fill: parent
+                source: _sourceFrame
+                fillMode: Image.PreserveAspectFit
+                cache: false
+
+                ColorOverlay {
+                    id: colorOverlayImage1
+                    anchors.fill: parent
+                    source: image1
+                    color: "#77111111"
                 }
-                text: qsTr(Number(_iValue0).toLocaleString(Qt.locale("de_DE"), 'f', 0))
+
+                Text {
+                    anchors.centerIn: parent
+                    font {
+                        pointSize: image1.width/_fFactorFont
+                        bold: true
+                    }
+                    text: {
+                        ""
+                        qsTr(Number(_iValue1).toLocaleString(Qt.locale("de_DE"), 'f', 0))
+                    }
+                }
             }
         }
 
-        Image {
-            id: image1
-            width: image.width/3; height: image.height/3
-            anchors.right: image.right
-            anchors.top: image.top
-            anchors.rightMargin: image.width/15
-            anchors.topMargin: image.height/2 - height/2
-            source: _sourceFrame
-            fillMode: Image.PreserveAspectFit
-            cache: false
+        Rectangle {
+            id: rect2
+            color: "transparent"
+            width: parent.width/_fFactorImage
+            height: parent.height/_fFactorImage
+            anchors.left: parent.horizontalCenter
+            anchors.leftMargin: -width/2
+            anchors.top: parent.verticalCenter
+            anchors.topMargin: 0
 
-            ColorOverlay {
-                id: colorOverlayImage1
+            Image {
+                id: image2
                 anchors.fill: parent
-                source: image1
-                color: "#77111111"
-            }
+                source: _sourceFrame
+                fillMode: Image.PreserveAspectFit
+                cache: false
 
-            Text {
-                anchors.centerIn: parent
-                font {
-                    pointSize: image1.width/4
-                    bold: true
+                ColorOverlay {
+                    id: colorOverlayImage2
+                    anchors.fill: parent
+                    source: image2
+                    color: "#77111111"
                 }
-                text: qsTr(Number(_iValue1).toLocaleString(Qt.locale("de_DE"), 'f', 0))
+
+                Text {
+                    anchors.centerIn: parent
+                    font {
+                        pointSize: image0.width/_fFactorFont
+                        bold: true
+                    }
+                    text: {
+                        ""
+                        qsTr(Number(_iValue2).toLocaleString(Qt.locale("de_DE"), 'f', 0))
+                    }
+                }
             }
         }
 
-        Image {
-            id: image2
-            width: image.width/3; height: image.height/3
-            anchors.left: image.left
-            anchors.bottom: image.bottom
-            anchors.leftMargin: image.width/2 - width/2
-            anchors.bottomMargin: image.height/15
-            source: _sourceFrame
-            fillMode: Image.PreserveAspectFit
-            cache: false
+        Rectangle {
+            id: rect3
+            color: "transparent"
+            width: parent.width/_fFactorImage
+            height: parent.height/_fFactorImage
+            anchors.left: parent.horizontalCenter
+            anchors.leftMargin: -width
+            anchors.top: parent.verticalCenter
+            anchors.topMargin: -height/2
 
-            ColorOverlay {
-                id: colorOverlayImage2
+            Image {
+                id: image3
                 anchors.fill: parent
-                source: image2
-                color: "#77111111"
-            }
+                source: _sourceFrame
+                fillMode: Image.PreserveAspectFit
+                cache: false
 
-            Text {
-                anchors.centerIn: parent
-                font {
-                    pointSize: image0.width/4
-                    bold: true
+                ColorOverlay {
+                    id: colorOverlayImage3
+                    anchors.fill: parent
+                    source: image3
+                    color: "#77111111"
                 }
-                text: qsTr(Number(_iValue2).toLocaleString(Qt.locale("de_DE"), 'f', 0))
-            }
-        }
 
-        Image {
-            id: image3
-            width: image.width/3; height: image.height/3
-            anchors.left: image.left
-            anchors.top: image.top
-            anchors.leftMargin: image.width/15
-            anchors.topMargin: image.height/2 - height/2
-            source: _sourceFrame
-            fillMode: Image.PreserveAspectFit
-            cache: false
-
-            ColorOverlay {
-                id: colorOverlayImage3
-                anchors.fill: parent
-                source: image3
-                color: "#77111111"
-            }
-
-            Text {
-                anchors.centerIn: parent
-                font {
-                    pointSize: image0.width/4
-                    bold: true
+                Text {
+                    anchors.centerIn: parent
+                    font {
+                        pointSize: image0.width/_fFactorFont
+                        bold: true
+                    }
+                    text: {
+                        ""
+                        qsTr(Number(_iValue3).toLocaleString(Qt.locale("de_DE"), 'f', 0))
+                    }
                 }
-                text: qsTr(Number(_iValue3).toLocaleString(Qt.locale("de_DE"), 'f', 0))
             }
         }
 
         MouseArea{
             anchors.fill: parent
-            drag.target: _id
+            //drag.target: _id
             hoverEnabled: true
             onPressed:{
                 image.source = _source
@@ -248,6 +291,11 @@ Item {
 
         states: [
             State {
+                name: "RELEASED"
+                //PropertyChanges { target: rect; color: "lightblue"}
+                PropertyChanges { target: rectGlowPressed; visible: false}
+            },
+            State {
                 name: "PRESSED"
                 PropertyChanges { target: rectGlowPressed; color: getActivePlayerColor() }
                 PropertyChanges { target: rectGlowPressed; visible: true}
@@ -256,11 +304,6 @@ Item {
                 name: "ENTERED"
                 PropertyChanges { target: rectGlowPressed; color: getActivePlayerColor() }
                 PropertyChanges { target: rectGlowPressed; visible: true}
-            },
-            State {
-                name: "RELEASED"
-                //PropertyChanges { target: rect; color: "lightblue"}
-                PropertyChanges { target: rectGlowPressed; visible: false}
             },
             State {
                 name: "EXITED"

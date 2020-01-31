@@ -51,8 +51,8 @@ private:
     QPoint _pointGroundResolution = QPoint(-1, -1);
     QList<StCard> _lstCardPlayer1;
     QList<StCard> _lstCardPlayer2;
-    QString _sCardPath = "./content/images/card/empty.png";
-    QString _sCardFrame = "./content/images/card/frame.png";
+    QString _sCardPath = ":/content/images/card/empty.png";
+    QString _sCardFrame = ":/content/images/card/frame.png";
 };
 
 #endif // CHANDLING_H
